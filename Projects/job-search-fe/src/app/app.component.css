@@ -1,0 +1,9 @@
+.filters {
+  width: 100%;
+}
+
+:host {
+  width: 85%;
+  padding-top: 100px;
+  min-height: 100vh;
+}

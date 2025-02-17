@@ -1,0 +1,57 @@
+<div class="text-2xl font-bold mb-2">
+  Ready to take the next step?
+</div>
+<div class="mb-5">
+  Create an account or sign in.
+</div>
+<p class="text-[0.8rem] mb-5">
+  By creating an account or signing in, you understand and agree to our
+  Terms and Regulations. You also acknowledge our Cookie and Privacy policies.
+</p>
+<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+  <div class="mb-4">
+    <label for="email" class="block mb-1 text-[0.8rem]">Email</label>
+    <input
+      placeholder="Email"
+      type="email"
+      id="email"
+      name="email"
+      ngModel
+      required
+      class="w-full text-[0.9rem] bg-white text-black h-[40px] px-4 border border-gray-300
+        rounded-md focus:outline-none "
+    />
+  </div>
+  <div class="mb-4 w-full">
+    <label for="password" class="block mb-1 text-[0.8rem]">Password</label>
+    <input
+      placeholder="Password"
+      type="password"
+      id="password"
+      name="password"
+      ngModel
+      required
+      class="w-full text-[0.9rem] bg-white text-black h-[40px] px-4 border border-gray-300 rounded-md focus:outline-none"
+    />
+  </div>
+  <button
+    class="w-full cursor-pointer h-[35px]  bg-blue-500 text-white disabled:bg-blue-300 disabled:cursor-not-allowed  rounded-[5px]"
+    type="submit"
+    [disabled]="!myForm.form.valid"
+  >
+    Sign In
+  </button>
+</form>
+<div class="w-full h-[30px] mt-2 mb-2 flex items-center justify-center text-center">
+  Or
+</div>
+<div
+  class="google w-full cursor-pointer h-[40px] rounded-[5px] bg-white flex items-center text-black justify-center px-4">
+  <img src="https://i.ibb.co/d8KYv0y/Google-Icons-09-512.webp" alt="Google-Icons-09-512" class="h-full mr-3"/>
+  <span>Continue with Google</span>
+</div>
+<div class="flex mt-3 justify-between items-center">
+  <a routerLink="/forgot-password" class="text-[0.8rem] font-normal text-blue-400 hover:text-blue-500">Forgot
+    Password?</a>
+  <a routerLink="/register" class="text-[0.8rem] font-normal text-blue-400 hover:text-blue-500">Register</a>
+</div>

@@ -1,0 +1,32 @@
+<div class="search-bar">
+  <div class="search-input">
+    <input type="text"
+           (input)="onKeywordChange($event)"
+           placeholder="Job title, keywords, or company"/>
+    <div class="keywords">
+    </div>
+  </div>
+  <div class="divider">
+    <div class="line"></div>
+  </div>
+  <div class="search-filter">
+    <input
+      (input)="onLocationKeywordChange($event)"/>
+    <div class="locations">
+      <div *ngFor="let location of locations" class="location p-2.5 hover:bg-gray-100">
+        <div class="h-full w-1/12 flex items-center justify-center">
+          <input
+            (change)="onLocationSelected(location.locationName, $event)"
+            type="radio" name="location" class="w-full h-full"/>
+        </div>
+        <div>
+          {{ location.locationName }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search-button">
+    <button (click)="search()">Search</button>
+  </div>
+</div>
+<div></div>
